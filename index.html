@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseNet - Social Platform</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <i class="fa-solid fa-cube brand-icon"></i>
+      <span class="brand-name">PulseNet</span>
+    </div>
+
+    <div class="nav-search">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" placeholder="Search platform...">
+    </div>
+
+    <div class="nav-actions">
+      <button class="nav-btn active" title="Feed"><i class="fa-solid fa-house"></i></button>
+      <button class="nav-btn" id="notif-btn" title="Notifications">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge" id="notif-count">2</span>
+      </button>
+      <button class="nav-btn" id="privacy-btn" title="Privacy Settings"><i class="fa-solid fa-shield-halved"></i></button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="app-container">
+    
+    <!-- Left Sidebar: Profile Overview -->
+    <aside class="sidebar-left">
+      <div class="profile-card">
+        <div class="profile-banner"></div>
+        <div class="profile-info">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Wasif" class="avatar-lg">
+          <h3 class="user-name">Wasif</h3>
+          <p class="user-tag">Software Engineer</p>
+          <div class="user-stats">
+            <div class="stat-item">
+              <span class="stat-value">840</span>
+              <span class="stat-label">Friends</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-value">32</span>
+              <span class="stat-label">Posts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Feed -->
+    <main class="main-feed">
+      
+      <!-- Create Post Box -->
+      <div class="card create-post-card">
+        <div class="post-input-wrapper">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Wasif" class="avatar-sm">
+          <textarea id="post-text" placeholder="What's on your mind, Wasif?"></textarea>
+        </div>
+        
+        <div id="image-preview" class="image-preview-box" style="display: none;">
+          <img id="preview-img" src="" alt="Selected Media">
+          <button id="remove-img-btn" class="close-btn">&times;</button>
+        </div>
+
+        <div class="post-card-actions">
+          <label class="media-btn">
+            <i class="fa-solid fa-image text-blue"></i>
+            <span>Photo / Video</span>
+            <input type="file" id="media-input" accept="image/*" hidden>
+          </label>
+          <button id="add-post-btn" class="btn-primary">Post</button>
+        </div>
+      </div>
+
+      <!-- Posts List -->
+      <div id="feed-container" class="feed-container">
+        
+        <!-- Sample Post -->
+        <article class="card post-card">
+          <header class="post-header">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Alex Rivera" class="avatar-sm">
+            <div class="post-meta">
+              <h4 class="author-name">Alex Rivera</h4>
+              <span class="post-time">2 hours ago</span>
+            </div>
+          </header>
+
+          <div class="post-body">
+            <p>Just completed a new responsive UI concept. Flexbox makes alignment so much easier!</p>
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80" alt="Code snippet" class="post-media">
+          </div>
+
+          <footer class="post-footer">
+            <div class="post-stats-bar">
+              <span class="likes-count"><i class="fa-solid fa-heart text-red"></i> <span class="likes-num">14</span> Likes</span>
+            </div>
+            <div class="post-action-buttons">
+              <button class="action-btn" onclick="toggleLike(this)">
